@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Sertifikat — Workshop Portofolio AI · FIKOM UDB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark">▲</span>
+        <span class="brand-text">FIKOM<strong>.UDB</strong></span>
+    </div>
+    <div class="actions">
+        <button onclick="downloadPDF()" class="btn-action">📥 Download PDF</button>
+        <button onclick="window.print()" class="btn-action">🖨️ Print</button>
+    </div>
+</header>
+
+<main class="main">
+    <!-- LEFT: Editor Form -->
+    <aside class="editor">
+        <h2>🎓 Generator Sertifikat</h2>
+        <p class="hint">Isi form, sertifikat di sebelah kanan auto-update. Bisa langsung print atau download PDF.</p>
+
+        <div class="field">
+            <label>Nama Peserta</label>
+            <input type="text" id="participantName" value="Budi Santoso" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>NIM (opsional)</label>
+            <input type="text" id="nim" value="2024xxxxxxx" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Program Studi</label>
+            <input type="text" id="prodi" value="Teknik Informatika" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Tanggal Workshop</label>
+            <input type="text" id="tanggal" value="18 Mei 2026" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Nama Pemateri</label>
+            <input type="text" id="pemateri" value="Pemateri Workshop" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Jabatan Pemateri</label>
+            <input type="text" id="jabatanPemateri" value="Dosen FIKOM UDB" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Nomor Sertifikat</label>
+            <input type="text" id="nomor" value="FIKOM/WS/2026/001" oninput="update()">
+        </div>
+
+        <div class="field">
+            <label>Pilih Tema</label>
+            <select id="theme" onchange="changeTheme(this.value)">
+                <option value="classic">🏛️ Classic Gold</option>
+                <option value="modern">🚀 Modern Gradient</option>
+                <option value="minimal">🤍 Minimal White</option>
+            </select>
+        </div>
+
+        <div class="bulk-section">
+            <h3>📦 Bulk Generate</h3>
+            <p class="hint">Paste daftar nama peserta (1 nama per baris), klik tombol untuk generate semua sertifikat.</p>
+            <textarea id="bulkNames" rows="5" placeholder="Budi Santoso&#10;Rina Maharani&#10;Andi Pratama&#10;..."></textarea>
+            <button onclick="bulkGenerate()" class="btn-bulk">🎬 Generate Semua</button>
+            <p class="bulk-status" id="bulkStatus"></p>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Tips:</strong>
+            <ul>
+                <li>Pakai Chrome untuk hasil PDF terbaik</li>
+                <li>Print → "Save as PDF" untuk file PDF</li>
+                <li>Atur "Margins: None" saat print</li>
+                <li>Background graphics → centang</li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- RIGHT: Certificate Preview -->
+    <section class="preview-area">
+        <div class="cert-wrapper">
+            <div class="certificate" id="certificate">
+
+                <!-- Decorative borders -->
+                <div class="cert-border-outer"></div>
+                <div class="cert-border-inner"></div>
+
+                <!-- Corner decorations -->
+                <div class="corner corner-tl">▲</div>
+                <div class="corner corner-tr">▲</div>
+                <div class="corner corner-bl">▲</div>
+                <div class="corner corner-br">▲</div>
+
+                <!-- Header -->
+                <header class="cert-header">
+                    <div class="cert-logo">
+                        <span class="cert-mark">▲</span>
+                        <span class="cert-org">FIKOM UDB</span>
+                    </div>
+                    <div class="cert-faculty">Fakultas Ilmu Komputer · Universitas Duta Bangsa Surakarta</div>
+                </header>
+
+                <!-- Title -->
+                <div class="cert-title">
+                    <span class="cert-eyebrow">✦ SERTIFIKAT ✦</span>
+                    <h1>Certificate of Completion</h1>
+                    <div class="cert-divider">
+                        <span class="line"></span>
+                        <span class="diamond">◆</span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="cert-body">
+                    <p class="given">Diberikan kepada</p>
+                    <h2 class="participant" id="participantDisplay">Budi Santoso</h2>
+                    <p class="nim-prodi">
+                        <span id="nimDisplay">2024xxxxxxx</span> · <span id="prodiDisplay">Teknik Informatika</span>
+                    </p>
+                    <p class="achievement">
+                        atas partisipasi dan keberhasilan menyelesaikan
+                    </p>
+                    <h3 class="workshop-title">
+                        Workshop Pelatihan Pembuatan Portofolio<br>
+                        Tanpa Coding dengan Pemanfaatan AI
+                    </h3>
+                    <p class="date">
+                        Diselenggarakan pada <strong id="tanggalDisplay">18 Mei 2026</strong>
+                    </p>
+                </div>
+
+                <!-- Signature -->
+                <footer class="cert-footer">
+                    <div class="signature">
+                        <div class="sig-line"></div>
+                        <strong id="pemateriDisplay">Pemateri Workshop</strong>
+                        <span id="jabatanDisplay">Dosen FIKOM UDB</span>
+                    </div>
+                    <div class="seal">
+                        <div class="seal-circle">
+                            <span class="seal-icon">✓</span>
+                            <span class="seal-text">VERIFIED</span>
+                        </div>
+                    </div>
+                    <div class="signature">
+                        <div class="sig-line"></div>
+                        <strong>Dekan FIKOM</strong>
+                        <span>Universitas Duta Bangsa</span>
+                    </div>
+                </footer>
+
+                <!-- Cert number & QR -->
+                <div class="cert-meta">
+                    <span>No: <strong id="nomorDisplay">FIKOM/WS/2026/001</strong></span>
+                    <span class="cert-tag">Issued via FIKOM Workshop System · 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

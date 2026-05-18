@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Worksheet Brainstorm — Workshop Portfolio AI · FIKOM UDB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        @page { size: A4; margin: 12mm; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a2e;
+            background: #f5f5f7;
+            line-height: 1.4;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; }
+        .page {
+            background: white;
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 12mm;
+            box-shadow: 0 0 30px rgba(0,0,0,0.08);
+            page-break-after: always;
+        }
+        .page:last-child { page-break-after: auto; }
+
+        /* Header */
+        header {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            border-bottom: 2px solid #1a1a2e;
+            padding-bottom: 10px; margin-bottom: 18px;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px; font-weight: 700;
+            color: #7c5cff;
+        }
+        .logo span { color: #1a1a2e; }
+        .meta { font-size: 11px; color: #666; text-align: right; }
+        .meta strong { display: block; font-size: 13px; color: #1a1a2e; margin-bottom: 2px; }
+
+        /* Title */
+        .doc-title {
+            text-align: center; margin-bottom: 18px;
+        }
+        .doc-title h1 { font-size: 22px; margin-bottom: 4px; }
+        .doc-title p { font-size: 12px; color: #666; }
+        .doc-title .badge {
+            display: inline-block; background: #7c5cff; color: white;
+            padding: 3px 10px; border-radius: 100px;
+            font-size: 10px; font-weight: 600; letter-spacing: 0.05em;
+            margin-bottom: 8px; text-transform: uppercase;
+        }
+
+        /* Section */
+        section { margin-bottom: 16px; }
+        section h3 {
+            font-size: 13px; color: #7c5cff;
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin-bottom: 8px; padding-bottom: 4px;
+            border-bottom: 1px dashed #ccc;
+        }
+        section h3 .num {
+            background: #7c5cff; color: white;
+            width: 22px; height: 22px; border-radius: 50%;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 11px; margin-right: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        section .help {
+            font-size: 10px; color: #999; font-style: italic;
+            margin-bottom: 6px;
+        }
+
+        /* Form fields */
+        .field {
+            margin-bottom: 10px;
+        }
+        .field label {
+            display: block; font-size: 11px;
+            font-weight: 600; color: #333;
+            margin-bottom: 3px;
+        }
+        .line {
+            border: none; border-bottom: 1px solid #aaa;
+            width: 100%; padding: 4px 2px;
+            font-family: inherit; font-size: 12px;
+            background: transparent;
+        }
+        .lines { display: grid; gap: 12px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+
+        .box {
+            border: 1px solid #ddd; border-radius: 6px;
+            padding: 8px;
+            min-height: 60px;
+        }
+        .box-row {
+            display: grid;
+            grid-template-columns: 28px 1fr 1.6fr 1fr;
+            gap: 8px;
+            margin-bottom: 6px; padding-bottom: 4px;
+            border-bottom: 1px dotted #ddd;
+        }
+        .box-row:last-child { border-bottom: none; }
+        .box-row .num {
+            font-weight: 700; color: #7c5cff;
+            font-size: 14px;
+        }
+        .box-row .lbl {
+            font-size: 10px; color: #999;
+            margin-bottom: 2px;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+        }
+        .skill-cell {
+            border: 1px solid #ddd; border-radius: 6px;
+            padding: 6px 8px; min-height: 32px;
+            font-size: 11px;
+        }
+
+        /* Style picker */
+        .style-options {
+            display: grid; grid-template-columns: repeat(5, 1fr);
+            gap: 6px; margin-top: 4px;
+        }
+        .style-option {
+            border: 1px solid #ddd; border-radius: 6px;
+            padding: 8px 6px; text-align: center;
+            font-size: 11px;
+        }
+        .style-option .preview {
+            width: 100%; height: 24px; border-radius: 4px;
+            margin-bottom: 4px;
+        }
+        .style-option .checkbox {
+            display: inline-block; width: 12px; height: 12px;
+            border: 1.5px solid #999; border-radius: 3px;
+            margin-right: 4px; vertical-align: middle;
+        }
+        .preview-1 { background: linear-gradient(135deg, #0a0a0f, #7c5cff); }
+        .preview-2 { background: linear-gradient(135deg, #faf6ef, #ff5722); }
+        .preview-3 { background: linear-gradient(135deg, #f3ebe0, #5d4037); }
+        .preview-4 { background: linear-gradient(135deg, #0a0a0f, #00d9ff); }
+        .preview-5 { background: linear-gradient(135deg, #fff, #ffb6c1); }
+
+        /* Footer */
+        footer {
+            margin-top: 18px; padding-top: 10px;
+            border-top: 1px dashed #ccc;
+            font-size: 9px; color: #999;
+            display: flex; justify-content: space-between;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 ============ -->
+<div class="page">
+    <header>
+        <div class="logo">▲ FIKOM<span>.UDB</span></div>
+        <div class="meta">
+            <strong>Worksheet Brainstorm</strong>
+            Workshop Portofolio AI · 2026
+        </div>
+    </header>
+
+    <div class="doc-title">
+        <span class="badge">Sebelum Prompt AI</span>
+        <h1>Cetak Biru Portofolio Kamu 📝</h1>
+        <p>Isi worksheet ini dulu — output AI akan jauh lebih bagus kalau input kamu detail.</p>
+    </div>
+
+    <!-- Section 1: Identitas -->
+    <section>
+        <h3><span class="num">1</span> Identitas Kamu</h3>
+        <p class="help">Isi pakai data asli — bukan nickname Twitter.</p>
+        <div class="grid-2">
+            <div class="field">
+                <label>Nama Lengkap</label>
+                <input class="line" type="text">
+            </div>
+            <div class="field">
+                <label>NIM / Email Kampus</label>
+                <input class="line" type="text">
+            </div>
+        </div>
+        <div class="grid-2">
+            <div class="field">
+                <label>Role / Spesialisasi</label>
+                <input class="line" type="text" placeholder="Mahasiswa Teknik Informatika · Web Developer · UI Designer">
+            </div>
+            <div class="field">
+                <label>Tagline (1 kalimat)</label>
+                <input class="line" type="text" placeholder="Crafting digital experiences, one project at a time.">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Pitch -->
+    <section>
+        <h3><span class="num">2</span> Pitch — "Saya Bantu Orang Dengan ___"</h3>
+        <p class="help">1-2 kalimat. Kata-kata kamu, bukan corporate-speak.</p>
+        <div class="lines">
+            <input class="line" type="text">
+            <input class="line" type="text">
+        </div>
+    </section>
+
+    <!-- Section 3: Skills -->
+    <section>
+        <h3><span class="num">3</span> Skills (Pilih 5-10)</h3>
+        <p class="help">Tulis tools/bahasa yang BISA kamu pakai. Bukan cuma tau namanya.</p>
+        <div class="skills-grid">
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+            <div class="skill-cell"></div>
+        </div>
+    </section>
+
+    <!-- Section 4: Projects -->
+    <section>
+        <h3><span class="num">4</span> Project Terbaik (3-5 Item)</h3>
+        <p class="help">Bisa tugas kuliah, freelance, side project. Yang penting kamu beneran ngerjain.</p>
+        <div class="box">
+            <div class="box-row">
+                <span class="num">1</span>
+                <div>
+                    <div class="lbl">Nama</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Deskripsi singkat</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Link demo / repo</div>
+                    <input class="line" type="text">
+                </div>
+            </div>
+            <div class="box-row">
+                <span class="num">2</span>
+                <div>
+                    <div class="lbl">Nama</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Deskripsi singkat</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Link demo / repo</div>
+                    <input class="line" type="text">
+                </div>
+            </div>
+            <div class="box-row">
+                <span class="num">3</span>
+                <div>
+                    <div class="lbl">Nama</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Deskripsi singkat</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Link demo / repo</div>
+                    <input class="line" type="text">
+                </div>
+            </div>
+            <div class="box-row">
+                <span class="num">4</span>
+                <div>
+                    <div class="lbl">Nama (opsional)</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Deskripsi singkat</div>
+                    <input class="line" type="text">
+                </div>
+                <div>
+                    <div class="lbl">Link demo / repo</div>
+                    <input class="line" type="text">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 FIKOM UDB · Workshop Portofolio AI</span>
+        <span>Halaman 1 dari 2</span>
+    </footer>
+</div>
+
+<!-- ============ PAGE 2 ============ -->
+<div class="page">
+    <header>
+        <div class="logo">▲ FIKOM<span>.UDB</span></div>
+        <div class="meta">
+            <strong>Worksheet Brainstorm</strong>
+            Workshop Portofolio AI · 2026
+        </div>
+    </header>
+
+    <!-- Section 5: Experience -->
+    <section>
+        <h3><span class="num">5</span> Pengalaman & Pendidikan</h3>
+        <p class="help">Magang, freelance, organisasi, achievement. Kalau belum ada, skip.</p>
+        <div class="lines">
+            <input class="line" type="text" placeholder="Magang Web Dev di PT XYZ · Jan – Mar 2025 · Bikin landing page">
+            <input class="line" type="text" placeholder="Freelance UI Designer · Sept 2024 – sekarang · 5 client">
+            <input class="line" type="text" placeholder="Anggota HMTI UDB · Sept 2024 – sekarang">
+            <input class="line" type="text" placeholder="S1 Teknik Informatika · UDB Surakarta · 2024 – 2028">
+        </div>
+    </section>
+
+    <!-- Section 6: Kontak -->
+    <section>
+        <h3><span class="num">6</span> Kontak</h3>
+        <p class="help">Pakai email & username yang profesional. Cek semua link bisa diklik.</p>
+        <div class="grid-2">
+            <div class="field">
+                <label>Email</label>
+                <input class="line" type="email">
+            </div>
+            <div class="field">
+                <label>WhatsApp (opsional)</label>
+                <input class="line" type="text">
+            </div>
+        </div>
+        <div class="grid-3">
+            <div class="field">
+                <label>LinkedIn (URL)</label>
+                <input class="line" type="text" placeholder="linkedin.com/in/...">
+            </div>
+            <div class="field">
+                <label>GitHub (URL)</label>
+                <input class="line" type="text" placeholder="github.com/...">
+            </div>
+            <div class="field">
+                <label>Instagram (opsional)</label>
+                <input class="line" type="text" placeholder="@...">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Style -->
+    <section>
+        <h3><span class="num">7</span> Pilih Style Portfolio Kamu</h3>
+        <p class="help">Centang 1 yang paling cocok dengan kepribadian kamu.</p>
+        <div class="style-options">
+            <div class="style-option">
+                <div class="preview preview-1"></div>
+                <span class="checkbox"></span>
+                <strong>Tech Modern</strong><br>
+                <small>Linear / Vercel</small>
+            </div>
+            <div class="style-option">
+                <div class="preview preview-2"></div>
+                <span class="checkbox"></span>
+                <strong>Bold Streetwear</strong><br>
+                <small>Off-White vibe</small>
+            </div>
+            <div class="style-option">
+                <div class="preview preview-3"></div>
+                <span class="checkbox"></span>
+                <strong>Earthy Premium</strong><br>
+                <small>Heritage</small>
+            </div>
+            <div class="style-option">
+                <div class="preview preview-4"></div>
+                <span class="checkbox"></span>
+                <strong>Cyberpunk</strong><br>
+                <small>Neon glow</small>
+            </div>
+            <div class="style-option">
+                <div class="preview preview-5"></div>
+                <span class="checkbox"></span>
+                <strong>Soft Pastel</strong><br>
+                <small>Friendly</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Vibe -->
+    <section>
+        <h3><span class="num">8</span> Vibe & Inspirasi</h3>
+        <div class="grid-2">
+            <div class="field">
+                <label>3 kata yang menggambarkan kepribadianmu</label>
+                <input class="line" type="text" placeholder="Curious · Detail-oriented · Playful">
+            </div>
+            <div class="field">
+                <label>Web yang kamu suka (referensi)</label>
+                <input class="line" type="text" placeholder="vercel.com · linear.app · stripe.com">
+            </div>
+        </div>
+        <div class="field">
+            <label>Hal unik tentang kamu (yang nggak dimiliki orang lain di kelas/kampus)</label>
+            <input class="line" type="text">
+        </div>
+    </section>
+
+    <!-- Section 9: Goal -->
+    <section>
+        <h3><span class="num">9</span> Goal Pakai Portfolio Ini</h3>
+        <p class="help">Centang yang relevan — biar AI tahu emphasis-nya kemana.</p>
+        <div class="grid-2" style="font-size: 11px;">
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Apply magang</div>
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Lamar kerja part-time</div>
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Cari client freelance</div>
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Personal branding</div>
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Dokumentasi project</div>
+            <div><span class="checkbox" style="display: inline-block; width: 12px; height: 12px; border: 1.5px solid #999; border-radius: 3px; margin-right: 6px; vertical-align: middle;"></span>Apply beasiswa</div>
+        </div>
+    </section>
+
+    <!-- Section 10: Domain Idea -->
+    <section>
+        <h3><span class="num">10</span> Ide Nama URL / Domain</h3>
+        <p class="help">Format Vercel: <strong>namasaya.vercel.app</strong> — tulis 3 ide:</p>
+        <div class="grid-3">
+            <input class="line" type="text" placeholder="contoh: budiwijaya">
+            <input class="line" type="text" placeholder="contoh: budiwijaya-dev">
+            <input class="line" type="text" placeholder="contoh: budi.codes">
+        </div>
+    </section>
+
+    <!-- Done banner -->
+    <section style="margin-top: 18px; padding: 14px; background: linear-gradient(135deg, #f0e7ff, #e0f7ff); border-radius: 10px; text-align: center; border: 2px dashed #7c5cff;">
+        <h3 style="color: #7c5cff; border: none; padding: 0; margin-bottom: 4px;">🚀 Sudah Lengkap?</h3>
+        <p style="font-size: 11px; color: #555;">Pindahkan info di worksheet ini ke <strong>Master Prompt</strong> di handout cheatsheet — lalu paste ke AI.</p>
+    </section>
+
+    <footer>
+        <span>© 2026 FIKOM UDB · Workshop Portofolio AI</span>
+        <span>Halaman 2 dari 2</span>
+    </footer>
+</div>
+
+</body>
+</html>

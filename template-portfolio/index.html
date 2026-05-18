@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio profesional — generated dengan template AI workshop FIKOM UDB.">
+    <title>{{NAMA}} — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#home" class="nav-logo">
+            <span class="logo-mark">{{INITIAL}}</span>
+            <span class="logo-text">{{NAMA_PENDEK}}</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="nav-cta">Hubungi</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="hero">
+    <div class="hero-bg">
+        <div class="grid-overlay"></div>
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+        <span class="hero-badge">▸ Available for opportunities</span>
+        <h1 class="hero-title">
+            Hi, saya <span class="gradient-text">{{NAMA}}</span>.<br>
+            <span class="hero-role">{{ROLE}}</span>
+        </h1>
+        <p class="hero-subtitle">
+            {{TAGLINE}}
+        </p>
+        <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">Lihat Karya Saya</a>
+            <a href="#contact" class="btn btn-ghost">Hubungi Saya →</a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num" data-target="{{JUMLAH_PROJECT}}">0</span>
+                <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num" data-target="{{JUMLAH_SKILL}}">0</span>
+                <span class="stat-label">Skills</span>
+            </div>
+            <div class="stat">
+                <span class="stat-num" data-target="{{TAHUN_AKTIF}}">0</span>
+                <span class="stat-label">Tahun Aktif</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">01 — About</span>
+            <h2>Tentang Saya</h2>
+        </div>
+        <div class="about-grid">
+            <div>
+                <p class="lead">{{BIO_PARAGRAF_1}}</p>
+                <p>{{BIO_PARAGRAF_2}}</p>
+                <p>{{BIO_PARAGRAF_3}}</p>
+            </div>
+            <div class="about-card">
+                <div class="about-emoji">🚀</div>
+                <h4>Quick Facts</h4>
+                <ul class="fact-list">
+                    <li><strong>📍 Lokasi:</strong> {{LOKASI}}</li>
+                    <li><strong>🎓 Pendidikan:</strong> {{PENDIDIKAN}}</li>
+                    <li><strong>💼 Status:</strong> {{STATUS}}</li>
+                    <li><strong>🎯 Fokus:</strong> {{FOKUS}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">02 — Skills</span>
+            <h2>Tools & Teknologi</h2>
+            <p class="lead">Tools yang saya pakai sehari-hari untuk bikin sesuatu yang berfungsi.</p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill"><span class="skill-icon">⚡</span><span>{{SKILL_1}}</span></div>
+            <div class="skill"><span class="skill-icon">🎨</span><span>{{SKILL_2}}</span></div>
+            <div class="skill"><span class="skill-icon">⚙️</span><span>{{SKILL_3}}</span></div>
+            <div class="skill"><span class="skill-icon">🛠️</span><span>{{SKILL_4}}</span></div>
+            <div class="skill"><span class="skill-icon">📦</span><span>{{SKILL_5}}</span></div>
+            <div class="skill"><span class="skill-icon">🐙</span><span>{{SKILL_6}}</span></div>
+            <div class="skill"><span class="skill-icon">🎯</span><span>{{SKILL_7}}</span></div>
+            <div class="skill"><span class="skill-icon">💡</span><span>{{SKILL_8}}</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">03 — Work</span>
+            <h2>Projects Terbaik</h2>
+            <p class="lead">Beberapa karya yang paling saya banggakan dari perjalanan saya.</p>
+        </div>
+        <div class="projects-grid">
+            <article class="project">
+                <div class="project-img" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <span class="project-emoji">🎯</span>
+                </div>
+                <div class="project-info">
+                    <h3>{{PROJECT_1_NAMA}}</h3>
+                    <p>{{PROJECT_1_DESKRIPSI}}</p>
+                    <div class="project-tags">
+                        <span class="tag">{{PROJECT_1_TAG_1}}</span>
+                        <span class="tag">{{PROJECT_1_TAG_2}}</span>
+                    </div>
+                    <a href="{{PROJECT_1_LINK}}" target="_blank" rel="noopener" class="project-link">Lihat Demo →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-img" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <span class="project-emoji">💻</span>
+                </div>
+                <div class="project-info">
+                    <h3>{{PROJECT_2_NAMA}}</h3>
+                    <p>{{PROJECT_2_DESKRIPSI}}</p>
+                    <div class="project-tags">
+                        <span class="tag">{{PROJECT_2_TAG_1}}</span>
+                        <span class="tag">{{PROJECT_2_TAG_2}}</span>
+                    </div>
+                    <a href="{{PROJECT_2_LINK}}" target="_blank" rel="noopener" class="project-link">Lihat Demo →</a>
+                </div>
+            </article>
+
+            <article class="project">
+                <div class="project-img" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <span class="project-emoji">🚀</span>
+                </div>
+                <div class="project-info">
+                    <h3>{{PROJECT_3_NAMA}}</h3>
+                    <p>{{PROJECT_3_DESKRIPSI}}</p>
+                    <div class="project-tags">
+                        <span class="tag">{{PROJECT_3_TAG_1}}</span>
+                        <span class="tag">{{PROJECT_3_TAG_2}}</span>
+                    </div>
+                    <a href="{{PROJECT_3_LINK}}" target="_blank" rel="noopener" class="project-link">Lihat Demo →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="section section-alt">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow">04 — Contact</span>
+            <h2>Mari Berkolaborasi</h2>
+            <p class="lead">Punya project menarik? Atau sekedar mau ngobrol soal teknologi? Drop a message.</p>
+        </div>
+        <div class="contact-grid">
+            <a href="mailto:{{EMAIL}}" class="contact-card">
+                <div class="contact-icon">✉️</div>
+                <h4>Email</h4>
+                <p>{{EMAIL}}</p>
+            </a>
+            <a href="https://linkedin.com/in/{{LINKEDIN}}" target="_blank" rel="noopener" class="contact-card">
+                <div class="contact-icon">💼</div>
+                <h4>LinkedIn</h4>
+                <p>/in/{{LINKEDIN}}</p>
+            </a>
+            <a href="https://github.com/{{GITHUB}}" target="_blank" rel="noopener" class="contact-card">
+                <div class="contact-icon">🐙</div>
+                <h4>GitHub</h4>
+                <p>@{{GITHUB}}</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 {{NAMA}}. Built with AI · Workshop FIKOM UDB.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pendaftaran Workshop FIKOM UDB - Pembuatan Portofolio Tanpa Coding dengan AI">
+    <title>Daftar Workshop — Portofolio AI · FIKOM UDB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+
+<header class="topbar">
+    <div class="brand">
+        <span class="brand-mark">▲</span>
+        <span class="brand-text">FIKOM<strong>.UDB</strong></span>
+    </div>
+    <div class="event-meta">
+        <span>WORKSHOP 2026</span>
+    </div>
+</header>
+
+<main class="container">
+    <div class="grid">
+
+        <!-- LEFT: Event Info -->
+        <aside class="event-info">
+            <span class="badge">⚡ Limited Seats</span>
+            <h1 class="title">
+                Bikin Portofolio<br>
+                dalam <span class="gradient">15 Menit</span>.<br>
+                <span class="muted">Tanpa coding.</span>
+            </h1>
+            <p class="subtitle">
+                Workshop hands-on bikin portfolio profesional pakai AI. Pulang langsung punya URL live yang bisa di-share ke LinkedIn malam itu juga.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-icon">📅</div>
+                    <div>
+                        <strong>Tanggal</strong>
+                        <span id="event-date">Sabtu, [TBD]</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div>
+                        <strong>Waktu</strong>
+                        <span>09:00 – 11:30 WIB</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <strong>Lokasi</strong>
+                        <span>Lab Komputer FIKOM UDB</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">💰</div>
+                    <div>
+                        <strong>Biaya</strong>
+                        <span class="free">GRATIS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefits">
+                <h4>Yang Kamu Dapat</h4>
+                <ul>
+                    <li>✓ Portfolio live di Vercel (URL siap share)</li>
+                    <li>✓ Source code di GitHub</li>
+                    <li>✓ Sertifikat keikutsertaan</li>
+                    <li>✓ Cheatsheet command + master prompt</li>
+                    <li>✓ Akses grup alumni workshop</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- RIGHT: Form -->
+        <section class="form-card">
+            <div class="form-head">
+                <h2>Daftar Sekarang</h2>
+                <p>Isi data lengkap. Konfirmasi via WhatsApp dalam 24 jam.</p>
+            </div>
+
+            <form id="registrationForm" class="form">
+                <div class="form-row">
+                    <div class="field">
+                        <label for="nama">Nama Lengkap *</label>
+                        <input type="text" id="nama" name="nama" required placeholder="Budi Santoso">
+                    </div>
+                    <div class="field">
+                        <label for="nim">NIM *</label>
+                        <input type="text" id="nim" name="nim" required placeholder="2024xxxxxx">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="email">Email Aktif *</label>
+                        <input type="email" id="email" name="email" required placeholder="nama@gmail.com">
+                    </div>
+                    <div class="field">
+                        <label for="wa">WhatsApp *</label>
+                        <input type="tel" id="wa" name="wa" required placeholder="08xx xxxx xxxx">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="field">
+                        <label for="prodi">Program Studi *</label>
+                        <select id="prodi" name="prodi" required>
+                            <option value="">— Pilih —</option>
+                            <option value="TI">Teknik Informatika</option>
+                            <option value="SI">Sistem Informasi</option>
+                            <option value="DKV">Desain Komunikasi Visual</option>
+                            <option value="ILKOM">Ilmu Komunikasi</option>
+                            <option value="LAIN">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="angkatan">Angkatan *</label>
+                        <select id="angkatan" name="angkatan" required>
+                            <option value="">— Pilih —</option>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022 dan sebelumnya</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Tingkat Familiar dengan Coding *</label>
+                    <div class="radio-group">
+                        <label class="radio">
+                            <input type="radio" name="level" value="zero" required>
+                            <span>🥚 Zero — belum pernah</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="level" value="basic">
+                            <span>🌱 Basic — pernah HTML/CSS</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="level" value="medium">
+                            <span>🚀 Medium — bisa JS / Python</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="level" value="advanced">
+                            <span>⚡ Advanced — udah deploy app</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Pernah Pakai AI Coding Tools? *</label>
+                    <div class="radio-group inline">
+                        <label class="radio">
+                            <input type="radio" name="ai_exp" value="never" required>
+                            <span>Belum pernah</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="ai_exp" value="chatgpt">
+                            <span>ChatGPT/Claude doang</span>
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="ai_exp" value="cli">
+                            <span>Pernah pakai Codex/Kiro</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="harapan">Harapan dari workshop ini? (opsional)</label>
+                    <textarea id="harapan" name="harapan" rows="3" placeholder="Contoh: Punya portfolio buat apply magang di akhir tahun..."></textarea>
+                </div>
+
+                <div class="checklist">
+                    <h4>📋 Komitmen Persiapan</h4>
+                    <p class="check-help">Centang semua untuk konfirmasi kamu siap install tools sebelum hari-H.</p>
+                    <label class="check"><input type="checkbox" required><span>Saya akan install Git, Node.js, Codex CLI, Vercel CLI sebelum workshop</span></label>
+                    <label class="check"><input type="checkbox" required><span>Saya akan bawa laptop sendiri + charger</span></label>
+                    <label class="check"><input type="checkbox" required><span>Saya berkomitmen hadir penuh 2.5 jam (tidak izin keluar di tengah)</span></label>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    🚀 Daftar Sekarang
+                </button>
+
+                <p class="form-note">Setelah kirim, panitia akan kontak via WhatsApp untuk konfirmasi.</p>
+            </form>
+
+            <!-- Success state -->
+            <div class="success" id="successState">
+                <div class="success-emoji">🎉</div>
+                <h3>Pendaftaran Berhasil!</h3>
+                <p>Tim panitia akan kontak kamu via WhatsApp dalam 24 jam.</p>
+                <div class="next-steps">
+                    <h4>Langkah Selanjutnya:</h4>
+                    <ol>
+                        <li>Cek WhatsApp untuk konfirmasi.</li>
+                        <li>Download <strong>Panduan Persiapan</strong> dari panitia.</li>
+                        <li>Install semua tools sebelum hari-H.</li>
+                    </ol>
+                </div>
+                <button onclick="location.reload()" class="btn-secondary">Daftarkan Lagi</button>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<footer class="footer">
+    <p>© 2026 FIKOM UDB · Workshop Portofolio AI · <a href="https://workshop-portofolio-ai.vercel.app" target="_blank" rel="noopener">Lihat Materi Workshop</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
