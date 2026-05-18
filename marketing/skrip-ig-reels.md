@@ -1,6 +1,8 @@
-# 🎬 Skrip Video Promosi IG Reels (60 detik × 3 video)
+# 🎬 Skrip Video Promosi IG Reels (60 detik × 3 video) — Online Workshop Edition
 
-> 3 angle berbeda untuk maksimalkan reach. Posting interval: H-14, H-7, H-3 sebelum workshop.
+> 3 angle berbeda untuk maksimalkan reach. Posting interval: H-14, H-7, H-3 sebelum workshop online.
+
+**Format Workshop:** 100% Online via Zoom — bisa diikuti dari mana saja.
 
 ---
 
@@ -48,13 +50,14 @@ Realita 2026: HRD baca CV kamu cuma 6 detik. Yang dilihat? LINK PORTFOLIO.
 
 Kabar baiknya: bikin portfolio profesional sekarang nggak butuh coding lagi. Cukup pakai AI, 15 menit kelar.
 
-🚀 FIKOM UDB ngadain workshop khusus buat ngajarin caranya.
+🚀 FIKOM UDB ngadain workshop online via ZOOM khusus buat ngajarin caranya.
 📅 Sabtu, [tanggal]
+🎥 100% ONLINE — bisa ikut dari kosan!
 🎫 GRATIS — slot terbatas
 
 Daftar di link bio sebelum kehabisan!
 
-#fikomudb #portfolio #workshop #ai #nocoding #studentlife #udbsurakarta
+#fikomudb #portfolio #workshop #ai #nocoding #studentlife #udbsurakarta #onlineworkshop
 ```
 
 ---
@@ -93,13 +96,14 @@ Daftar di link bio sebelum kehabisan!
 🚢 Step 6: Deploy
 ✅ DONE. URL siap di-share.
 
-Caranya gw share di workshop FIKOM UDB minggu depan. GRATIS.
+Caranya gw share di workshop ONLINE via Zoom FIKOM UDB minggu depan. GRATIS, dari kamar pun bisa ikut.
 
 🎫 Slot 50 peserta — udah keisi 35.
-📅 Sabtu, [tanggal]
+📅 Sabtu, [tanggal] · 09:00 - 11:30 WIB
+🎥 Format: ZOOM (link H-1)
 🔗 Daftar di link bio
 
-#fikomudb #portfoliodalam60detik #ai #vercel #portfolio
+#fikomudb #portfoliodalam60detik #ai #vercel #portfolio #onlineworkshop
 ```
 
 ### Tips Produksi
@@ -135,22 +139,23 @@ Caranya gw share di workshop FIKOM UDB minggu depan. GRATIS.
 ```
 3 HARI LAGI 🔥
 
-Workshop "Bikin Portfolio AI Tanpa Coding" tinggal sebentar. Slot tinggal sedikit.
+Workshop ONLINE "Bikin Portfolio AI Tanpa Coding" tinggal sebentar. Slot tinggal sedikit.
 
 Yang udah daftar: sebagian besar nggak punya background coding sama sekali. Yang penting: niat & laptop yang udah install tools.
 
 Hasil peserta:
 ✅ 98% pulang dengan portfolio live di Vercel
-✅ 100% dapat sertifikat
-✅ Akses grup alumni untuk follow-up
+✅ 100% dapat e-sertifikat digital
+✅ Akses recording 30 hari + grup alumni Telegram
 
 Slot tinggal sedikit. Yang masih ngebatin "ah nanti aja" — lo udah ketinggalan.
 
 🎫 Daftar SEKARANG di link bio.
-📅 Sabtu, [tanggal] · 09:00 - 11:30
-📍 Lab Komputer FIKOM UDB
+📅 Sabtu, [tanggal] · 09:00 - 11:30 WIB
+🎥 Online via ZOOM — bisa ikut dari mana aja!
+📍 Link Zoom dikirim H-1 via WhatsApp
 
-#fikomudb #lastcall #workshop #portfolioai
+#fikomudb #lastcall #onlineworkshop #portfolioai #zoom
 ```
 
 ---

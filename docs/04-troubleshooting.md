@@ -1,6 +1,75 @@
-# 🆘 Troubleshooting Guide
+# 🆘 Troubleshooting Guide — Online Workshop via Zoom
 
-> Common errors saat workshop dan cara fixnya. Asisten/pemateri pakai ini sebagai handbook.
+> Common errors saat workshop online dan cara fixnya. Asisten/pemateri pakai ini sebagai handbook untuk respond di chat Zoom.
+
+---
+
+## 🎥 Zoom-Specific Issues (Khusus Online Format)
+
+### Audio echo / suara muter
+
+**Penyebab:** Pakai speaker laptop (bukan headset).
+
+**Fix:**
+- Pakai headset / earphone (wajib)
+- Settings → Audio → "Suppress background noise" → High
+- Mute mic kalau nggak ngomong
+
+---
+
+### Mic tidak detect / orang nggak denger
+
+**Fix:**
+1. Zoom → klik panah di samping tombol Mic → Test Mic
+2. Pilih input device yang benar (kalau pakai headset, pilih headset, bukan laptop mic)
+3. Cek volume system: Mac (System Settings → Sound → Input), Windows (Settings → System → Sound)
+4. Restart Zoom kalau masih masalah
+
+---
+
+### Video lag / freeze
+
+**Fix:**
+- Tutup app berat (Spotify, browser tab banyak, Discord)
+- Settings → Video → uncheck "Enable HD"
+- Disable virtual background
+- Pindah dekat router atau pakai kabel LAN
+- Last resort: matikan kamera, audio aja
+
+---
+
+### Internet lambat / packet loss
+
+**Fix:**
+- Tethering dari HP (4G/5G) — biasanya lebih stabil
+- Tutup app yang pakai bandwidth (download, streaming)
+- Restart router (cabut listrik 30 detik)
+- Reconnect Zoom — panitia akan admit lagi
+
+---
+
+### Tidak bisa join Zoom (passcode salah / link expired)
+
+**Fix:**
+- Cek ulang link & passcode di chat WA grup workshop
+- Kalau passcode salah, panitia akan resend
+- Pastikan Zoom App ter-update ke versi terbaru
+
+---
+
+### Zoom keluar tiba-tiba (drop)
+
+**Fix:**
+- Panitia akan re-admit dari waiting room
+- Kalau kelewatan banyak, akses recording (link dikirim H+1)
+
+---
+
+### Screen share peserta tidak jalan
+
+**Fix:**
+- Host harus enable "Allow participants to share screen" terlebih dahulu
+- Cek di Zoom Settings → Share Screen → Co-host/Participants
 
 ---
 
@@ -28,7 +97,6 @@ codex --version
 
 ```bash
 npm install -g vercel
-# Tunggu sampai selesai
 vercel --version
 ```
 
@@ -42,24 +110,24 @@ sudo npm install -g vercel
 ### `command not found: git` di Windows
 
 1. Download installer: https://git-scm.com/download/win
-2. Run installer (default settings).
-3. **Restart laptop** (bukan cuma terminal).
-4. Buka PowerShell baru → `git --version`.
+2. Run installer (default settings)
+3. **Restart laptop** (bukan cuma terminal)
+4. Buka PowerShell baru → `git --version`
 
 ---
 
 ### `command not found: node` setelah install
 
-- **Restart laptop** (Windows wajib).
-- Cek PATH (Windows): Setting → Environment Variables → cek ada `C:\Program Files\nodejs\`.
-- Reinstall dengan opsi "Add to PATH" tercentang.
+- **Restart laptop** (Windows wajib)
+- Cek PATH (Windows): Setting → Environment Variables → cek ada `C:\Program Files\nodejs\`
+- Reinstall dengan opsi "Add to PATH" tercentang
 
 ---
 
-### `npm install` lambat banget / hang
+### `npm install` lambat / hang
 
 ```bash
-# Pakai registry alternative (lebih cepat di Indonesia)
+# Pakai registry mirror (lebih cepat di Indonesia)
 npm config set registry https://registry.npmmirror.com
 npm install -g vercel
 
@@ -79,13 +147,6 @@ codex login --device-auth
 # Generate ulang kalau expired
 ```
 
-Kalau masih gagal:
-```bash
-# Coba ulang
-codex logout
-codex login --device-auth
-```
-
 ---
 
 ### Vercel login gagal
@@ -97,8 +158,6 @@ vercel login
 # Authorize di browser yang otomatis kebuka
 ```
 
-Kalau browser tidak otomatis buka, copy URL yang muncul di terminal, paste manual.
-
 ---
 
 ### GitHub push minta password
@@ -107,7 +166,6 @@ GitHub udah nggak terima password sejak 2021. Pakai salah satu:
 
 **Cara 1: gh CLI (recommended)**
 ```bash
-# Install gh: https://cli.github.com
 gh auth login
 # Pilih: GitHub.com → HTTPS → Authenticate via browser
 ```
@@ -126,9 +184,9 @@ gh auth login
 
 ### Vercel deploy stuck di "Uploading"
 
-- Cek koneksi internet (ping google.com).
-- Tutup terminal, buka lagi, retry.
-- Pakai hotspot HP kalau wifi kampus lambat.
+- Cek koneksi internet
+- Tutup terminal, buka lagi, retry
+- Pakai hotspot HP kalau wifi lambat
 
 ---
 
@@ -155,7 +213,6 @@ ls
 # Output harus include: index.html
 
 # Kalau nggak ada, cek apakah Save As-nya jadi index.html.txt
-# Rename:
 mv index.html.txt index.html
 ```
 
@@ -163,39 +220,24 @@ mv index.html.txt index.html
 
 ### Foto/gambar tidak muncul
 
-**Cek path di HTML:**
 ```html
 <!-- ❌ SALAH (path absolut lokal) -->
 <img src="C:/Users/Budi/Desktop/foto.jpg">
 
 <!-- ✅ BENAR (path relatif) -->
 <img src="assets/foto.jpg">
-<img src="./foto.jpg">
-```
-
-**Pastikan struktur folder:**
-```
-portfolio/
-├── index.html
-├── style.css
-├── script.js
-└── assets/
-    └── foto.jpg
 ```
 
 ---
 
 ### CSS tidak load
 
-**Cek link di HTML:**
+Cek link di HTML:
 ```html
-<!-- Harus ada ini di <head> -->
 <link rel="stylesheet" href="style.css">
 ```
 
-**Cek nama file:**
-- HTML pakai `style.css` → file harus `style.css` (case-sensitive di Vercel!)
-- Bukan `Style.css` atau `styles.css`.
+**Case-sensitive di Vercel!** `style.css` ≠ `Style.css`.
 
 ---
 
@@ -222,7 +264,7 @@ Tolong split outputmu jadi 3 message:
 **Test dulu:**
 ```
 Test code yang baru kamu kasih. Saya buka di browser, ada error:
-[paste error message dari console / browser]
+[paste error message dari console]
 Tolong fix.
 ```
 
@@ -234,14 +276,13 @@ Tolong fix.
 
 ### AI pakai library yang gagal load
 
-**Kasih constraint:**
 ```
 Stack: HTML + CSS + Vanilla JavaScript ONLY.
 - NO React, NO Vue, NO frameworks
 - NO build step (no webpack, no vite)
 - NO npm packages
-- HANYA bisa pakai CDN: Google Fonts, Font Awesome (opsional)
-- Output: 3 file (index.html, style.css, script.js) yang langsung jalan saat double-click index.html.
+- HANYA bisa pakai CDN: Google Fonts
+- Output: 3 file (index.html, style.css, script.js) yang langsung jalan saat double-click index.html
 ```
 
 ---
@@ -249,8 +290,8 @@ Stack: HTML + CSS + Vanilla JavaScript ONLY.
 ### AI bikin Lorem Ipsum di bio/about
 
 ```
-Tolong gantikan SEMUA Lorem Ipsum, placeholder, dan dummy text dengan:
-[konten asli kamu]
+Tolong gantikan SEMUA Lorem Ipsum, placeholder, dan dummy text dengan data saya:
+[paste data kamu]
 Tidak boleh ada teks placeholder di output final.
 ```
 
@@ -260,9 +301,9 @@ Tidak boleh ada teks placeholder di output final.
 
 ### "File not found" saat double-click index.html
 
-- Jangan double-click dari ZIP file. Extract dulu.
-- Pastikan file di folder yang benar.
-- Coba drag-drop `index.html` ke browser yang sudah kebuka.
+- Jangan double-click dari ZIP file. Extract dulu
+- Pastikan file di folder yang benar
+- Coba drag-drop `index.html` ke browser yang sudah kebuka
 
 ---
 
@@ -284,26 +325,15 @@ Tidak boleh ada teks placeholder di output final.
 **Test di DevTools:**
 - F12 → toggle device toolbar (Ctrl+Shift+M)
 - Pilih iPhone SE / Pixel 5
-- Cek ada bagian yang kepotong atau kekecilan
-
-**Minta AI fix:**
-```
-Mobile responsive bermasalah di [section X].
-Issue:
-- Padding terlalu sempit
-- Font terlalu kecil
-- Grid jadi 1 kolom (atau sebaliknya)
-Tolong fix media query di style.css.
-```
 
 ---
 
 ## 🌐 Network Issues
 
-### Wifi kampus lambat banget
+### Wifi lambat banget
 
 - Pakai hotspot HP sementara
-- Atau download AI output dulu, paste di terminal saat offline (yang penting `vercel deploy` butuh internet)
+- Tutup app yang pakai bandwidth lain (Zoom + browser + Spotify = berat)
 
 ---
 
@@ -313,16 +343,6 @@ Tolong fix media query di style.css.
 # Coba registry mirror Indonesia
 npm config set registry https://registry.npmmirror.com
 npm install -g vercel
-```
-
----
-
-### `git push` timeout
-
-```bash
-# Naikkan timeout
-git config --global http.postBuffer 524288000
-git push
 ```
 
 ---
@@ -348,20 +368,25 @@ cd portfolio
 ### Pindah AI
 
 Kalau Codex/ChatGPT down:
-- **Claude** (claude.ai) — biasanya stabil, output rapi
+- **Claude** (claude.ai) — biasanya stabil
 - **Gemini** (gemini.google.com) — gratis, fast
-- **Kiro.dev** — kalau AI utama overloaded
+- **Kiro.dev**
 
 ---
 
-## 📞 Eskalasi
+## 📞 Eskalasi (Online Workflow)
 
-Kalau peserta stuck > 10 menit, panggil asisten. Kalau asisten stuck > 5 menit, panggil pemateri.
+Kalau peserta stuck **> 10 menit**:
+1. Peserta tulis di **chat Zoom** dengan format: `🆘 STUCK: [error message singkat]`
+2. **Asisten DM peserta** via Zoom Chat (private)
+3. Kalau perlu, asisten **pull peserta ke Breakout Room** untuk troubleshoot 1-on-1
+4. Asisten minta peserta **share screen** untuk lihat masalah langsung
+5. Kalau nggak bisa di-fix < 10 menit, switch ke **Plan B**: kasih template-portfolio
 
 **Prinsip:**
 - Jangan biarkan peserta stuck > 15 menit total
 - Lebih baik skip ke step berikutnya dengan template, lalu balik fix lagi
-- Yang penting: **end of workshop semua peserta punya URL live**
+- **Yang penting: end of workshop semua peserta punya URL live**
 
 ---
 
@@ -369,10 +394,10 @@ Kalau peserta stuck > 10 menit, panggil asisten. Kalau asisten stuck > 5 menit, 
 
 ### Kalau peserta beneran stuck, kasih template ready
 
-Pemateri / asisten siapkan **1 template portfolio yang udah jadi** di folder `templates/` (file: `index.html`, `style.css`, `script.js`).
+Pemateri / asisten siapkan **1 template portfolio yang udah jadi** di folder `template-portfolio/` (file: `index.html`, `style.css`, `script.js`).
 
 Peserta tinggal:
-1. Copy folder template
+1. Download template (link di chat Zoom)
 2. Edit text manual (nama, project, dll) di `index.html`
 3. Deploy: `vercel --prod --yes`
 
@@ -387,4 +412,26 @@ Yang penting: **no one leaves empty-handed.**
 
 ---
 
+## 🎥 Online Workshop Pro Tips (Asisten)
+
+### Engagement
+- **Sebut nama peserta** di chat → bikin merasa dilihat
+- **Reaction emoji** sebagai feedback cepat (👍 untuk konfirmasi)
+- **Spotlight peserta yang aktif** di chat → dorong yang lain
+
+### Chat Management
+- **Pin pesan penting** (link slide, master prompt) di chat
+- **Save chat history** ke file (.txt) untuk dokumentasi
+- **Cek chat tiap 30 detik** — jangan biarkan pertanyaan menumpuk
+
+### Technical
+- **Test Zoom 30 menit sebelum** dengan asisten
+- **Backup link slide** ada di multiple tempat (chat Zoom, WA grup)
+- **Recording cloud + local** — untuk redundancy
+- **Disable participant screen share** kecuali diizinkan
+
+---
+
 **Stay calm, debug rationally, deliver value.** 💪
+
+Khusus online: **patience is everything**. Peserta lebih mudah panik di online — tugas pemateri/asisten = jadi anchor yang tenang.
