@@ -72,6 +72,22 @@ if (!isNaN(hashIdx) && hashIdx >= 1 && hashIdx <= totalSlides) {
     updateSlide(0);
 }
 
+// Fullscreen button
+const fsBtn = document.getElementById('fsBtn');
+if (fsBtn) {
+    fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen?.();
+        } else {
+            document.exitFullscreen?.();
+        }
+    });
+    document.addEventListener('fullscreenchange', () => {
+        fsBtn.textContent = document.fullscreenElement ? '⛶' : '⛶';
+        fsBtn.classList.toggle('active-fs', !!document.fullscreenElement);
+    });
+}
+
 // Easter egg
 console.log('%c🚀 Workshop Slides — FIKOM UDB', 'font-size: 18px; font-weight: bold; color: #7c5cff;');
-console.log('%cTekan ← → untuk navigasi · F untuk fullscreen', 'font-size: 13px; color: #00d9ff;');
+console.log('%cTekan ← → untuk navigasi · F untuk fullscreen', 'font-size: 13px; color: #2563eb;');
